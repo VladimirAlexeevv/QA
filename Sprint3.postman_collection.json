@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "2b9a2c18-ec2e-4275-92a8-8bfd15837b35",
+		"name": "Sprint3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24917975"
+	},
+	"item": [
+		{
+			"name": "Добавление товаров в корзину",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 7,\r\n            \"quantity\": 2\r\n        }\r\n    \r\n        \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://de074748-52fb-4d5f-b58e-f62c3b7c104c.serverhub.praktikum-services.ru/api/v1/orders/1",
+					"protocol": "https",
+					"host": [
+						"de074748-52fb-4d5f-b58e-f62c3b7c104c",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление корзины (БАГ)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://a2b4fe00-a327-4519-aa49-6409652d1726.serverhub.praktikum-services.ru/api/v1/orders/1?",
+					"protocol": "https",
+					"host": [
+						"a2b4fe00-a327-4519-aa49-6409652d1726",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Просмотр списка продуктов в корзине",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://bf8fbb85-e054-4f54-94b8-2b124dae5259.serverhub.praktikum-services.ru/api/v1/orders/1",
+					"protocol": "https",
+					"host": [
+						"bf8fbb85-e054-4f54-94b8-2b124dae5259",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление продуктов в набор",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productsList\": [\r\n        {\r\n            \"id\": 2,\r\n            \"quantity\": 2\r\n        }\r\n    \r\n        \r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://02e82b64-7ac9-45d9-9ccf-4e5f54efc49c.serverhub.praktikum-services.ru/api/v1/kits/2/products",
+					"protocol": "https",
+					"host": [
+						"02e82b64-7ac9-45d9-9ccf-4e5f54efc49c",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"2",
+						"products"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Доставка \"привезем быстро\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<InputModel>\r\n    <productsCount>2</productsCount>\r\n    <productsWeight>5.115</productsWeight>\r\n    <deliveryTime>20</deliveryTime>\r\n</InputModel>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://c5ba7a7c-5f92-4016-89c4-0f20d8c6c409.serverhub.praktikum-services.ru/fast-delivery/v3.1.1/calculate-delivery.xml",
+					"protocol": "https",
+					"host": [
+						"c5ba7a7c-5f92-4016-89c4-0f20d8c6c409",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"fast-delivery",
+						"v3.1.1",
+						"calculate-delivery.xml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
